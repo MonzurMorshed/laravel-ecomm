@@ -12,6 +12,12 @@ use App\Jobs\GenerateInvoice;
 
 class OrderController extends Controller
 {
+    protected $paayymentGateway;
+
+    public function __construct() {
+        
+    }
+
     public function placeOrder(Request $request)
     {
         $order = Order::create($request->all());
